@@ -1,0 +1,8 @@
+aiohttp         == 0.18.3
+aiopyramid      == 0.3.1
+aiopg
+pyramid         == 1.5.7
+gunicorn
+peewee-async    == 0.3.4
+psycopg2
+pyramid_jinja2

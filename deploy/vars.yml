@@ -2,6 +2,7 @@
 
 frameworks:
 - aiohttp
+- aiopyramid
 - bottle
 - django
 - falcon

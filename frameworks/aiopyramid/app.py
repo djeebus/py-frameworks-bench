@@ -1,4 +1,5 @@
 import aiohttp
+import asyncio
 import os
 import peewee
 import peewee_async
@@ -28,6 +29,7 @@ def json(request):
 
 
 @view_config(route_name='remote')
+@asyncio.coroutine
 def remote(request):
     response = yield from aiohttp.request('GET', 'http://%s' % HOST)
     text = yield from response.text()
@@ -35,6 +37,7 @@ def remote(request):
 
 
 @view_config(route_name='complete', renderer='template.jinja2')
+@asyncio.coroutine
 def complete(request):
     messages = yield from peewee_async.execute(Message.select())
     messages = list(messages)
